@@ -1,0 +1,27 @@
+%------------------------------------------------------------------------------
+% Idempotent_def
+%
+%     Authors: Muhammad Saad, Alexandria University
+%              Ahmed Saleh, Damanhour University
+%
+%------------------------------------------------------------------------------
+idempotent_def[T: Type+,*:[T,T -> T]]: THEORY
+
+BEGIN
+
+   
+   IMPORTING groupoid_def[T,*]
+
+   G: VAR (groupoid?[T,*])
+   e: VAR T
+
+   idempotent?(G)(e) : bool=(e*e=e)
+
+
+%--------------------------------------------------------------
+
+
+    idempotent(R): TYPE = {e:R | idempotent?(R)(e)}
+
+END idempotent_def
+
